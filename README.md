@@ -61,7 +61,26 @@ It has **two main components**:
   - Accessories
   - Footwear
   - Outerwear
-    
+
+
+
+### 🛠️ Stack Framework
+
+| **Layer** | **Tool / Library** | **Function** |
+|------------|--------------------|---------------|
+| **Data Ingestion** | Pandas | Reads and cleans raw customer shopping data |
+| **Data Storage** | PostgreSQL + SQLAlchemy | Stores processed data for persistence and analysis |
+| **Feature Engineering** | Pandas / NumPy | Creates behavioral metrics and derived attributes |
+| **Model Training** | XGBoost + Scikit-learn | Builds and evaluates multi-class classification model |
+| **Imbalance Handling** | SMOTE (imbalanced-learn) | Balances target class distribution during training |
+| **Model Serialization** | Joblib | Saves trained model and preprocessing pipeline |
+| **Backend Framework** | FastAPI | Serves trained model via `/predict` endpoint |
+| **Data Validation** | Pydantic | Ensures incoming API data conforms to schema |
+| **Frontend** | React (Recharts, Axios) | Interactive dashboard and prediction GUI |
+| **Visualization** | Recharts (JS) / Matplotlib (Python) | Visualizes analytics and prediction outputs |
+| **Environment Management** | venv / npm | Isolates Python and Node.js dependencies |
+
+
 ## How to Run
 
 ### 1️⃣ Backend 
