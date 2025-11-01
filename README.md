@@ -62,10 +62,35 @@ It has **two main components**:
   - Footwear
   - Outerwear
     
+## How to Run
+
+### 1️⃣ Backend 
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install fastapi uvicorn pandas scikit-learn xgboost imbalanced-learn joblib psycopg2-binary sqlalchemy
+
+# Start FastAPI server
+python server.py
+
+###2️⃣ Frontend
+# Navigate to client directly
+cd client
+# Install dependencies
+npm install
+# Start React app
+npm start
+
+3️⃣ Jupyter / ML Workflow (Optional:to inspect ml workflow)
+
+jupyter notebook
+# or run exported scripts
+python customerbehaviouranalytics.py
+python mlprediction.py
 
 
 
 
-
-if this is my readme file where do one usually put images in the readme github profile
 
