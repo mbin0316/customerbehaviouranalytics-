@@ -8,11 +8,12 @@ An end-to-end project predicting customer purchase categories and visualizing in
 This project integrates **machine learning and full-stack development** to analyze and predict customer purchase behavior based on shopping data.  
 It has **two main components**:
 <p align="center">
-  <img src="images/custom1.png" alt="Dashboard 1" width="25%" height=200px>
-  <img src="images/custom2.png" alt="Dashboard 2" width="25%" height=200px>
-  <img src="images/custom3.png" alt="Dashboard 3" width="25%" height=200px>
-  <img src="images/custom4.png" alt="Dashboard 4" width="25%" height=200px>
+  <img src="images/custom1.png" alt="Dashboard 1" width="28%">
+  <img src="images/custom2.png" alt="Dashboard 2" width="28%">
+  <img src="images/custom3.png" alt="Dashboard 3" width="28%">
+  <img src="images/custom4.png" alt="Dashboard 4" width="28%">
 </p>
+
 
 
 1. **Data Science & ML Pipeline** – implemented in Jupyter notebooks (exported as Python scripts):  
