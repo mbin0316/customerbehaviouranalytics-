@@ -1,5 +1,5 @@
 # 🧠 Customer Behaviour Analytics  
-### Data Preprocessing • Machine Learning • FastAPI • React Dashboard
+### Data Analytics • Machine Learning • FastAPI • React Dashboard •Python Web Development
 An end-to-end project predicting customer purchase categories and visualizing insights through an interactive web dashboard.
 ---
 ##  Overview
