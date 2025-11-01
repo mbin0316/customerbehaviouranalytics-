@@ -30,16 +30,16 @@ It has **two main components**:
 ##  Machine Learning Workflow
 
 ### 1️⃣ Data Preprocessing (`customerbehaviouranalytics.py`)
-- Reads **`customer_shopping_behavior.csv`**
+- Reads raw dataset **`customer_shopping_behavior.csv`**
 - Cleans columns (lowercase, rename, fill missing median review ratings)
 - Maps purchase frequency text → numeric days
-- Creates **`age_group`** and **`purchase_frequency_days`**
+- Creates age_group and purchase_frequency_days
 - Saves cleaned file as `cleaned_processed_customer_data.csv`
 - Writes the cleaned dataset into a PostgreSQL table using SQLAlchemy
 
 ### 2️⃣ Model Training (`mlprediction.py`)
 - Loads cleaned dataset  
-- Creates **derived behavioral features**:
+- Creates derived behavioral features:
   - Spending & frequency (`avg_spent_per_day`, `price_per_frequency`)
   - Value segmentation (`customer_value`, `high_value_customer`)
   - Discount & loyalty indicators (`deal_seeker`, `loyalty_score`)
