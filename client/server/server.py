@@ -37,11 +37,8 @@ class CustomerInput(BaseModel):
 
 
 def engineer_features(df):
-    """
-    Create EXACT same features as training code
-    Must match your training notebook exactly!
-    """
-    # Create age_group if not already present
+
+   
     if 'age_group' not in df.columns:
         def categorize_age(age):
             if age <= 25:
@@ -54,7 +51,7 @@ def engineer_features(df):
                 return 'Elderly'
         df['age_group'] = df['age'].apply(categorize_age)
     
-    # Create frequency_of_purchases if not already present
+    
     if 'frequency_of_purchases' not in df.columns:
         def categorize_frequency(days):
             if days <= 7:
@@ -65,33 +62,29 @@ def engineer_features(df):
                 return 'Monthly'
         df['frequency_of_purchases'] = df['purchase_frequency_days'].apply(categorize_frequency)
     
-    # Purchase behavior features (FROM TRAINING)
+   
     df['avg_spent_per_day'] = df['purchase_amount'] / (df['purchase_frequency_days'] + 1)
     df['price_per_frequency'] = df['purchase_amount'] / (df['purchase_frequency_days'] + 1)
     
-    # CRITICAL: Use the quantile values FROM YOUR TRAINING DATA
-    # You need to save these during training or use fixed thresholds
-    # For now, using reasonable estimates - REPLACE WITH ACTUAL VALUES!
-    QUANTILE_25_DAYS = 14  # Replace with: df['purchase_frequency_days'].quantile(0.25)
+    QUANTILE_25_DAYS = 14  
     df['is_frequent_buyer'] = (df['purchase_frequency_days'] < QUANTILE_25_DAYS).astype(int)
     
-    # Value-based segmentation (FROM TRAINING)
+   
     df['customer_value'] = df['purchase_amount'] * (30 / (df['purchase_frequency_days'] + 1))
     
-    # Replace with: df['customer_value'].quantile(0.75) from training
-    QUANTILE_75_VALUE = 500  # REPLACE WITH ACTUAL VALUE!
+    QUANTILE_75_VALUE = 500 
     df['high_value_customer'] = (df['customer_value'] > QUANTILE_75_VALUE).astype(int)
     
-    # Discount sensitivity (FROM TRAINING)
+    
     df['discount_user'] = df['discount_applied'].map({'Yes': 1, 'No': 0})
     df['promo_user'] = df['promo_code_used'].map({'Yes': 1, 'No': 0})
     df['deal_seeker'] = ((df['discount_user'] == 1) | (df['promo_user'] == 1)).astype(int)
     
-    # Loyalty indicators (FROM TRAINING - includes rating!)
+
     df['is_subscriber'] = df['subscription_status'].map({'Yes': 1, 'No': 0})
     df['loyalty_score'] = df['is_subscriber'] + df['is_frequent_buyer'] + (df['review_rating'] >= 4).astype(int)
     
-    # Strategic interaction features (FROM TRAINING)
+  
     df['gender_season'] = df['gender'] + '_' + df['season']
     df['age_group_frequency'] = df['age_group'] + '_' + df['frequency_of_purchases']
     
