@@ -23,7 +23,7 @@ It has **two main components**:
 
 2. **Interactive Web Dashboard** – implemented with **FastAPI (backend)** and **React (frontend)**:  
    - FastAPI exposes a `/predict` endpoint that returns category predictions and probabilities  
-   - React dashboard visualizes analytics and lets users submit new prediction requests  
+   - React dashboard visualizes analytics and lets users submit new prediction requests based on ML model developed in earlier phase 1 
 
 ---
 
